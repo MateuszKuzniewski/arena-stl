@@ -25,4 +25,4 @@ run-test.sh
 # Clangd
 /.clangd/
 .clangd/
-.
+.clangd
