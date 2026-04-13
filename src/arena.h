@@ -22,14 +22,14 @@ namespace my
             return new (ptr) T(std::forward<Args>(args)...);
         };
 
+        [[nodiscard]] void* alloc_bytes(size_t size);
+
         void reset();
 
         size_t used() const;
         size_t capacity() const;
         size_t remaining() const;
 
-    private:
-        [[nodiscard]] void* alloc_bytes(size_t size);
         
     private:
         std::byte* m_storage;
