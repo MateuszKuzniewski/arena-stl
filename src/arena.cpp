@@ -1,5 +1,6 @@
 #include <cstddef>
 #include <assert.h>
+#include <print>
 //------------------
 #include "arena.h"
 
@@ -28,6 +29,7 @@ my::arena::~arena() noexcept
 
 void my::arena::reset()
 {
+    std::print("Arena Reset\n");
     m_offset = 0;
 };
 

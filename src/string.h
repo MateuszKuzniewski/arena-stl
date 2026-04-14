@@ -20,7 +20,6 @@ namespace my
 
         string(const string&) = delete;
         string(string&&) = delete;
-
         string& operator=(const string&) = delete;
         string& operator=(string&&) = delete;
 
