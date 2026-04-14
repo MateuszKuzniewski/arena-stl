@@ -10,7 +10,8 @@ namespace my
     public:
         explicit arena(size_t capacity);
         ~arena() noexcept;
-
+        
+        arena() = delete;
         arena(const arena& arena) = delete;
         arena& operator=(const arena&) = delete;
 
