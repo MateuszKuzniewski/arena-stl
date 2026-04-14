@@ -1,6 +1,7 @@
 #include <cstddef>
 #include <assert.h>
 #include <print>
+#include <cstring>
 //------------------
 #include "arena.h"
 
@@ -15,9 +16,8 @@ my::arena::~arena() noexcept
     delete[] m_storage;
 };
 
-[[nodiscard]] void* my::arena::alloc_bytes(size_t size)
+[[nodiscard]] void* my::arena::alloc_bytes(size_t size, size_t align)
 {
-    size_t align = alignof(max_align_t);
     size_t alignment = (m_offset + align - 1) & ~(align- 1); 
     
     assert(alignment + size <= m_capacity && "Arena out of memory");

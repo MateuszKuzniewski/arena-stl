@@ -18,11 +18,11 @@ namespace my
         template<typename T, typename... Args>
         T* allocate(Args&&... args)
         {
-            void* ptr = alloc_bytes(sizeof(T));
+            void* ptr = alloc_bytes(sizeof(T), alignof(T));
             return new (ptr) T(std::forward<Args>(args)...);
         };
 
-        [[nodiscard]] void* alloc_bytes(size_t size);
+        [[nodiscard]] void* alloc_bytes(size_t size, size_t align = alignof(std::max_align_t));
 
         void reset();
 
