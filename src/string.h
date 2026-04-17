@@ -15,7 +15,7 @@ namespace my
         {
             m_size = std::strlen(str);
             m_data = static_cast<char*>(m_arena.alloc_bytes(m_size + 1));
-            memcpy(m_data, str, m_size + 1);
+            std::memcpy(m_data, str, m_size + 1);
         };
 
         string(const string&) = delete;
