@@ -19,7 +19,7 @@ namespace my
 
         ~vector()
         {
-            for(int i = 0; i < m_size; i++)
+            for (int i = 0; i < m_size; i++)
             {
                 m_data[i].~T();
             }

@@ -1,6 +1,5 @@
 #include <print>
 #include <cstring>
-#include <vector>
 //--------------------
 #include "types.h"
 #include "arena.h"
@@ -27,28 +26,27 @@ int main()
     //////////////// STRING //////////////////////////
     std::print("\nSTRING\n");
     my::string s(arena, "Hello World");
-    const char* cstr = s.c_str();
-    size_t size = s.size();
-    char c = s[1];
-    std::print("word: {0} | size: {1} | 2nd char: {2}\n", cstr, size, c);
+
+    std::print("word: {0} | size: {1} | 2nd char: {2}\n", s.c_str(), s.size(), s[1]);
  
 
     //////////////// VECTOR //////////////////////////
     std::print("\nVECTOR - primitive type\n");
     my::vector<int> v(arena, 5);
+
     for (int i = 0; i <= 4; i++)
     {
         v.push_back(i);
     }
     
-    for(auto i : v)
+    for (auto i : v)
     {
         std::print("item: {0}\n", i);
     }
 
-
     std::print("\nVECTOR - non-trivial type\n");
     my::vector<vector_data> vd(arena, 2);
+
     vector_data vds
     {
         .x = 1,
@@ -59,7 +57,7 @@ int main()
     vd.push_back(vds);
     vd.emplace_back(5,6,7);
 
-    for(auto item : vd)
+    for (auto item : vd)
     {
         std::print("x: {0}, y: {1}, z: {2}\n", item.x, item.y, item.z);
     }
