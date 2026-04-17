@@ -24,6 +24,8 @@ my::arena::~arena() noexcept
 
     void* ptr = m_storage + alignment;
     m_offset = alignment + size;
+
+    std::print("Allocating size of {0} at {1}\n", size, ptr);
     return ptr;
 };
 
