@@ -1,7 +1,7 @@
 #pragma once
 #include <cstddef>
 #include <utility>
-
+#include <functional> // silences clang error
 
 namespace my 
 {
