@@ -8,16 +8,16 @@
 namespace my
 {
     template<typename T>
-    class vector
+    class array
     {
     public:
 
-        vector(arena& arena, size_t capacity) : m_arena(arena), m_size(0), m_capacity(capacity) 
+        array(arena& arena, size_t capacity) : m_arena(arena), m_size(0), m_capacity(capacity) 
         {
             m_data = static_cast<T*>(arena.alloc_bytes(sizeof(T) * m_capacity, alignof(T)));
         }
 
-        ~vector()
+        ~array()
         {
             for (int i = 0; i < m_size; i++)
             {
@@ -25,10 +25,10 @@ namespace my
             }
         }
 
-        vector(const vector&) = delete;
-        vector(vector&&) = delete;
-        vector& operator=(const vector&) = delete;
-        vector& operator=(vector&&) = delete;
+        array(const array&) = delete;
+        array(array&&) = delete;
+        array& operator=(const array&) = delete;
+        array& operator=(array&&) = delete;
 
         void push_back(const T& item)
         {

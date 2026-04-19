@@ -4,9 +4,9 @@
 #include "types.h"
 #include "arena.h"
 #include "string.h"
-#include "vector.h"
+#include "array.h"
 
-struct vector_data
+struct array_data
 {
     i32 x;
     i32 y;
@@ -31,9 +31,9 @@ int main()
     std::print("word: {0} | size: {1} | 2nd char: {2}\n", s.c_str(), s.size(), s[1]);
     std::print("{0}\n", sub->c_str());
 
-    //////////////// VECTOR //////////////////////////
-    std::print("\nVECTOR - primitive type\n");
-    my::vector<int> v(arena, 5);
+    //////////////// ARRAY //////////////////////////
+    std::print("\nARRAY- primitive type\n");
+    my::array<int> v(arena, 5);
 
     for (int i = 0; i <= 4; i++)
     {
@@ -45,10 +45,10 @@ int main()
         std::print("item: {0}\n", i);
     }
 
-    std::print("\nVECTOR - non-trivial type\n");
-    my::vector<vector_data> vd(arena, 2);
+    std::print("\nARRAY - non-trivial type\n");
+    my::array<array_data> vd(arena, 2);
 
-    vector_data vds
+    array_data vds
     {
         .x = 1,
         .y = 2,
