@@ -26,9 +26,10 @@ int main()
     //////////////// STRING //////////////////////////
     std::print("\nSTRING\n");
     my::string s(arena, "Hello World");
-
+    
+    auto sub = s.substr(3, 4);
     std::print("word: {0} | size: {1} | 2nd char: {2}\n", s.c_str(), s.size(), s[1]);
- 
+    std::print("{0}\n", sub->c_str());
 
     //////////////// VECTOR //////////////////////////
     std::print("\nVECTOR - primitive type\n");
