@@ -11,7 +11,7 @@ namespace my
     {
     public:
 
-        string(arena& arena) : m_arena(arena) {}
+        string(arena& arena) : m_arena(arena), m_data(nullptr), m_size(0){}
 
         string(arena& arena, const char* str) : m_arena(arena)
         {
@@ -43,6 +43,8 @@ namespace my
         const char* c_str() const { return m_data; }
         size_t size() const { return m_size; }
         char operator[](size_t i) const { return m_data[i]; }
+
+    private:
 
     private:
 
