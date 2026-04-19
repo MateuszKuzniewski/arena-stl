@@ -29,7 +29,7 @@ my::arena::~arena() noexcept
     return ptr;
 };
 
-void my::arena::reset()
+void my::arena::reset() noexcept
 {
     std::print("Arena Reset\n");
     m_offset = 0;
