@@ -42,7 +42,7 @@ namespace my
 
         const char* c_str() const { return m_data; }
         size_t size() const { return m_size; }
-        char operator[](size_t i) const { return m_data[i]; }
+        char operator[](size_t i) const { assert(i < m_size); return m_data[i]; }
 
     private:
 
