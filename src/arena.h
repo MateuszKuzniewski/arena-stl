@@ -23,13 +23,12 @@ namespace my
             return new (ptr) T(std::forward<Args>(args)...);
         };
 
+        void reset() noexcept;
+
         [[nodiscard]] void* alloc_bytes(size_t size, size_t align = alignof(std::max_align_t));
-
-        void reset();
-
-        size_t used() const;
-        size_t capacity() const;
-        size_t remaining() const;
+        [[nodiscard]] size_t used() const;
+        [[nodiscard]] size_t capacity() const;
+        [[nodiscard]] size_t remaining() const;
 
         
     private:
