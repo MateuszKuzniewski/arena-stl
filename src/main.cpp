@@ -35,7 +35,8 @@ int main()
     list.push_front(5);
     list.push_front(6);
     list.push_front(7);
-
+    list.pop_front();
+    list.pop_back();
     std::print("list size: {0}\n", list.size());
 
     for (auto& item : list)

@@ -74,6 +74,41 @@ namespace my
 
             m_size++;
         }
+        
+        void pop_front() 
+        {
+            assert(m_head && "list is empty");
+
+            m_head = m_head->next;
+
+            if (m_head == nullptr)
+                m_tail = nullptr;
+
+            m_size--;
+        }
+
+        void pop_back() 
+        {
+            assert(m_head && "list is empty");
+            
+            if (m_head == m_tail)
+            {
+                m_head = nullptr;
+                m_tail = nullptr;
+                m_size--;
+                return;
+            }
+            
+            node* prev = m_head;
+            while (prev->next != m_tail)
+            {
+                prev = prev->next;
+            }
+
+            prev->next = nullptr;
+            m_tail = prev;
+            m_size--;
+        }
 
         [[nodiscard]] iterator begin() { assert(m_head); return iterator(m_head); }
         [[nodiscard]] iterator end() { return iterator(nullptr); }
