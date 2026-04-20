@@ -42,6 +42,17 @@ namespace my
 
         list(arena& arena) : m_arena(arena), m_head(nullptr), m_tail(nullptr), m_size(0) {}
 
+        ~list()
+        {
+            node* current = m_head;
+
+            while (current != m_tail)
+            {
+                current->value.~T();
+                current = current->next;
+            }
+        }
+
         list(const list&) = delete;
         list(list&&) = delete;
         list& operator=(const list&) = delete;
