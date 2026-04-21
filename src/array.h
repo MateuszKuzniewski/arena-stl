@@ -59,11 +59,11 @@ namespace my
         [[nodiscard]] size_t size() const noexcept      { return m_size; }
         [[nodiscard]] size_t capacity() const noexcept  { return m_capacity; }
 
-        [[nodiscard]] T* begin()                        { return m_data; }
-        [[nodiscard]] T* end()                          { return m_data + m_size; }
+        [[nodiscard]] T* begin() noexcept               { return m_data; }
+        [[nodiscard]] T* end() noexcept                 { return m_data + m_size; }
 
-        [[nodiscard]] const T* begin() const            { return m_data; }
-        [[nodiscard]] const T* end() const              { return m_data + m_size; }
+        [[nodiscard]] const T* begin() const noexcept   { return m_data; }
+        [[nodiscard]] const T* end() const noexcept     { return m_data + m_size; }
 
     private:
 
