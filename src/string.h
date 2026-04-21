@@ -46,8 +46,6 @@ namespace my
 
     private:
 
-    private:
-
         arena& m_arena;
         char* m_data;
         size_t m_size;
